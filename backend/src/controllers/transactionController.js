@@ -4,7 +4,17 @@ import Transaction from "../models/Transaction.js";
 export const createTransaction = async (req, res) => {
   try {
     const { amount, type, category, date, notes } = req.body;
+      if (!amount || !type || !category) {
+        return res.status(400).json({
+          message: "Amount, type and category are required",
+        });
+      }
 
+      if (!["income", "expense"].includes(type)) {
+        return res.status(400).json({
+          message: "Type must be income or expense",
+        });
+      }
     const transaction = await Transaction.create({
       amount,
       type,
