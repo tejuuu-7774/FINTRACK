@@ -1,16 +1,16 @@
-# 🚀 FINTRACK Backend API
+# FINTRACK Backend API
 
 A backend system for managing financial records with role-based access control and dashboard analytics.
 
 ---
 
-## 🌐 Live API Deployed in Render
+## Live API
 
 https://fintrack-krb5.onrender.com
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 - Node.js  
 - Express.js  
@@ -19,35 +19,35 @@ https://fintrack-krb5.onrender.com
 
 ---
 
-## ✨ Features
+## Features
 
 - User Authentication (Register/Login)
 - Role-Based Access Control (Admin, Analyst, Viewer)
 - Financial Records CRUD (Income & Expense)
 - Filtering (by type, category, date range)
 - Dashboard Summary APIs (totals, balance, breakdown)
-- Input Validation & Error Handling
-- Secure password hashing (bcrypt)
+- Input Validation and Error Handling
+- Secure password hashing using bcrypt
 - Deployed on Render
 
 ---
 
-## 🔐 Roles & Permissions
+## Roles and Permissions
 
 - **Admin**
   - Full access (create, update, delete, manage)
 
 - **Analyst**
-  - View records + access dashboard insights
+  - View records and access dashboard insights
 
 - **Viewer**
   - Read-only access
 
 ---
 
-## 📌 API Endpoints
+## API Endpoints
 
-### Auth
+### Authentication
 - POST /api/auth/register  
 - POST /api/auth/login  
 
@@ -62,42 +62,27 @@ https://fintrack-krb5.onrender.com
 
 ---
 
-## 🧠 Technical Decisions
+## Technical Decisions
 
-- Express.js used for lightweight and modular API design  
-- MongoDB chosen for flexible schema handling of financial records  
-- JWT used for stateless authentication  
-- Role-based middleware implemented for clean access control  
-- MongoDB aggregation used for efficient dashboard analytics  
-
----
-
-## ⚖️ Trade-offs
-
-- Open IP access in MongoDB enabled for easier development and deployment  
-- Basic validation implemented (can be extended using validation libraries)
+- Express.js was chosen for its lightweight and modular API structure  
+- MongoDB was used for flexible schema handling of financial records  
+- JWT authentication was implemented for stateless and secure sessions  
+- Role-based middleware ensures clear separation of authorization logic  
+- MongoDB aggregation pipelines are used for efficient dashboard analytics  
 
 ---
 
-## 🛠️ Setup (Local)
+## Trade-offs
+
+- Open IP access in MongoDB Atlas was enabled for ease of development and deployment  
+- Validation is implemented manually and can be extended using libraries such as Joi or Zod  
+
+---
+
+## Setup (Local)
 
 ```bash
 git clone <your-repo-url>
 cd backend
 npm install
 npm run dev
-```
----
-### Create a `.env` file:
-
-```env
-MONGO_URI=your_mongo_uri
-JWT_SECRET=your_secret
-PORT=3000
-```
----
-
-# 📎 Notes
-- Backend is structured with clear separation of concerns
-- Focused on clean code, maintainability, and logical design
-- Easily extendable with frontend or additional features
